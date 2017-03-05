@@ -1,0 +1,52 @@
+#hello {
+  text-align: center;
+  margin-top: 16rem;
+  .title {
+    font-size: 12rem;
+    text-align: center;
+    color: salmon;
+  }
+
+  .sub-title {
+    font-size: 7rem;
+    text-align: center;
+    color: #9d9d9d;
+    margin-top: -3rem;
+  }
+
+  .btn-group {
+    text-align: center;
+    margin-top: 5rem;
+    button {
+      width: 8rem;
+      height: 3rem;
+      border: 1px solid salmon;
+      background-color: transparent;
+      border-radius: 0.3rem;
+      font-size: 1.5rem;
+      color: #9d9d9d;
+      outline: none;
+
+      &:hover {
+        background-color: salmon;
+        color: #fff;
+        cursor: pointer;
+      }
+    }
+
+    button:last-child {
+      margin-left: 3rem;
+    }
+  }
+
+  .look-look {
+    margin-top: 2rem;
+    text-align: center;
+    color: salmon;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
