@@ -2,7 +2,7 @@ import * as types from '../constants/ActionTypes'
 import { combineReducers } from 'redux'
 
 const indexState = {
-    indexIsActive: false
+    indexIsActive: true
 }
 
 const index = (state = indexState, action) => {

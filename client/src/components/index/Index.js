@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+import BlogAbstract from './BlogAbstract'
 import * as indexActions from '../../actions/index/index'
 import cs from 'classnames'
 
@@ -20,13 +21,8 @@ class Index extends Component {
     render () {
         const {isActive, indexActions} = this.props
         return (
-            <div className={cs({'hidden': !isActive})}>
-                <div className="text-center form-group">
-                    <div className="col-lg-8 col-lg-offset-2">
-                        <textarea className="form-control" rows="8" cols="50" placeholder="请输入想说的内容" ref="textarea"></textarea>
-                        <div className="text-center"><button className="btn btn-info" onClick={this.submitShort.bind(this)}>发布</button></div>
-                    </div>
-                </div>
+            <div className='text-center col-lg-6 col-lg-offset-3 body'>
+                <div><BlogAbstract/><BlogAbstract/><BlogAbstract/></div>
             </div>
         )
     }
