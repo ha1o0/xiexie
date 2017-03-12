@@ -25,6 +25,8 @@
     min-height: 52rem;
     resize: none;
     border: solid 1px #e2e2e2;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
     border-radius: 10px;
     outline: none;
 
@@ -52,6 +54,5 @@
         color: salmon;
       }
     }
-
   }
 }

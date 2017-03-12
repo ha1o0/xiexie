@@ -12,3 +12,5 @@ export const IGNORE_LOGIN = 'IGNORE_LOGIN'
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
 export const INDEX = 'INDEX'
 export const SUBMIT_SHORT = 'SUBMIT_SHORT'
+
+export const SAVE_ARTICLE = 'SAVE_ARTICLE'
