@@ -58,8 +58,11 @@ class Header extends Component {
                 </div>
                 <div className="user-info"><img src="./src/img/xjs.jpeg" alt="" className="img-circle"/></div>
               </div>
-              <hr/>
-              {this.props.children}
+
+              <div className="container-fluid">{this.props.children}</div>
+              <div className="footer text-center">
+                  Powered By ReactJs with bootstrap and Express framework
+              </div>
             </div>
         );
     }
