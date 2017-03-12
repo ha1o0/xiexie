@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import cs from 'classnames'
+import { History } from 'react-router'
 
 import '../../styles/header.scss'
 
@@ -39,6 +40,15 @@ class Header extends Component {
             extendBtnDisplay: false
         })
     }
+
+    hrefXiexie = () => {
+        window.location = '/xiexie'
+    }
+
+    hrefIndex = () => {
+        window.location = '/'
+    }
+
     render() {
         return (
             <div>
@@ -53,8 +63,8 @@ class Header extends Component {
                 </div>
                 <div className="navigator">
                   <button className={cs('btn', {'hidden': !this.state.extendBtnDisplay})}>记忆</button>
-                  <button className="btn" onMouseOver={this.hoverIndexBtn}>首页</button>
-                  <button className={cs('btn', {'hidden': !this.state.extendBtnDisplay})}>写写</button>
+                  <button className="btn" onMouseOver={this.hoverIndexBtn} onClick={this.hrefIndex}>首页</button>
+                  <button className={cs('btn', {'hidden': !this.state.extendBtnDisplay})} onClick={this.hrefXiexie}>写写</button>
                 </div>
                 <div className="user-info"><img src="./src/img/xjs.jpeg" alt="" className="img-circle"/></div>
               </div>
