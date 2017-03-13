@@ -1,16 +1,20 @@
+/*100px = 8rem*/
+
 .header {
+
   background-color: #ffffff;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  height: 100px;
+  padding-top: 1.6rem;
+  padding-bottom: 1.6rem;
+  height: 8rem;
 
   > div {
     display: inline-block;
   }
 
   .multi-theme {
-    margin-top: 18px;
-    margin-left: 50px;
+
+    margin-top: 1.5rem;
+    margin-left: 10rem;
     width: 30%;
 
     > div {
@@ -22,10 +26,13 @@
       cursor: pointer;
     }
 
+    /*px in this file can not be changed to rem because of the compatibility*/
     .out-circle {
       width: 25px;
       height: 25px;
       background-color: transparent;
+      -moz-border-radius: 50%;
+      -webkit-border-radius: 50%;
       border-radius: 50%;
     }
 
@@ -33,6 +40,8 @@
       width: 15px;
       height: 15px;
       background-color: transparent;
+      -moz-border-radius: 50%;
+      -webkit-border-radius: 50%;
       border-radius: 50%;
       position: relative;
       top: 3px;
@@ -65,25 +74,25 @@
   }
 
   .navigator {
+
     width: 40%;
     position: absolute;
     left: 30%;
     text-align: center;
 
     button {
-      display: inline-block;
-      margin-right: 20px;
+      margin-right: 1.6rem;
       width: 60px;
       height: 60px;
-      text-align: center;
-      filter:chroma(color=#000000);
-      -webkit-border-radius: 50%;
       -moz-border-radius: 50%;
+      -webkit-border-radius: 50%;
       border-radius: 50%;
       color: salmon;
       border: 2px solid salmon;
       background-color: transparent;
       outline: none;
+      -moz-transition: all .1s linear;
+      -webkit-transition: all .1s linear;
       transition: all .1s linear;
       &:hover {
         background-color: salmon;
@@ -95,12 +104,14 @@
   }
 
   .user-info {
+
     width: 30%;
-    margin: 18px 20px 0 50px;
+    margin: 1.44rem 1.6rem 0 4rem;
     position: absolute;
     left: 67%;
     top: 0;
     text-align: center;
+
     img {
       position: relative;
       right: -20%;
@@ -108,8 +119,19 @@
       height: 5rem;
     }
   }
+}
 
-  hr {
-    border-color: #000;
-  }
+.footer {
+  text-align: center;
+  font-family: Monaco;
+  color: #888888;
+  font-weight: bold;
+  font-size: 1.6rem;
+  line-height: 5rem;
+  width: 100%;
+  background-color: #FFFFFF;
+  margin-top: 2rem;
+  padding-top: 1.6rem;
+  padding-bottom: 1.6rem;
+  height: 8rem;
 }

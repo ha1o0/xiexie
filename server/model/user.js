@@ -1,6 +1,3 @@
-/**
- * Created by sidney on 17/2/7.
- */
 const mongoose = require('mongoose');
 var Schema = mongoose.Schema;   //  创建模型
 var userScheMa = new Schema({

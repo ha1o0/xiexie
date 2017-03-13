@@ -22,7 +22,12 @@ class Index extends Component {
         const {isActive, indexActions} = this.props
         return (
             <div className='text-center col-lg-6 col-lg-offset-3 body'>
-                <div><BlogAbstract/><BlogAbstract/><BlogAbstract/></div>
+                <div>
+                    <BlogAbstract/>
+                    <BlogAbstract/>
+                    <BlogAbstract/>
+                    <BlogAbstract/>
+                </div>
             </div>
         )
     }
