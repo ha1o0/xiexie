@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import cs from 'classnames'
-import { History } from 'react-router'
+import Notification from '../common/Notification'
 
 import '../../styles/header.scss'
 
@@ -52,6 +52,7 @@ class Header extends Component {
     render() {
         return (
             <div>
+              <Notification/>
               <div className="header" onMouseLeave={this.hideExtendBtn}>
                 <div className="multi-theme">
                   <div className="out-circle out-black" onClick={this.selectBlackTheme}>

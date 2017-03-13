@@ -22,3 +22,9 @@ export const saveArticle = (title, content) => {
         type: types.SAVE_ARTICLE
     }
 }
+
+export const notice = (notificationType, noticeContent) => ({
+    type: types.NOTICE,
+    notificationType,
+    noticeContent
+})
