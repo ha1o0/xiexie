@@ -27,7 +27,7 @@ class Notification extends Component {
         console.log (notificationType, noticeIsActive, noticeContent)
         let type = 'alert alert-' + notificationType
         return (
-            <div className={cs(type,{'alert-animation': noticeIsActive})} role="role" ref="notification">{noticeContent}</div>
+            <div className={cs(type,{'alert-animation': noticeIsActive},{'hidden': !noticeIsActive})} role="role" ref="notification">{noticeContent}</div>
         )
     }
 }
