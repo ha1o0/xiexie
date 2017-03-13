@@ -14,14 +14,10 @@ class Index extends Component {
         }
     }
 
-    submitShort () {
-        let shortContent = this.refs.textarea.value
-        this.props.indexActions.submitShort(shortContent)
-    }
     render () {
         const {isActive, indexActions} = this.props
         return (
-            <div className='text-center col-lg-6 col-lg-offset-3 body'>
+            <div className='text-center col-lg-6 col-lg-offset-3 index'>
                 <div>
                     <BlogAbstract/>
                     <BlogAbstract/>

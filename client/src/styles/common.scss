@@ -1,0 +1,43 @@
+.alert {
+  width: 40%;
+  position: fixed;
+  top: 3.7rem;
+  left: 30%;
+  text-align: center;
+  z-index: 1000;
+}
+
+@keyframes anim {
+  0% {top: 3.7rem}
+  20% {top: 8rem}
+  80% {top: 8rem}
+  100% {top: 3.7rem}
+}
+
+@-webkit-keyframes anim {
+  0% {top: 3.7rem}
+  20% {top: 8rem}
+  80% {top: 8rem}
+  100% {top: 3.7rem}
+}
+
+@-moz-keyframes anim {
+  0% {top: 3.7rem}
+  20% {top: 8rem}
+  80% {top: 8rem}
+  100% {top: 3.7rem}
+}
+
+@-o-keyframes anim {
+  0% {top: 3.7rem}
+  20% {top: 8rem}
+  80% {top: 8rem}
+  100% {top: 3.7rem}
+}
+
+.alert-animation {
+  animation-name: anim;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}

@@ -9,8 +9,8 @@ class Write extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            title: '请输入文章标题',
-            content: '以下为文章内容'
+            title: '',
+            content: ''
         }
     }
 
@@ -28,6 +28,10 @@ class Write extends Component {
 
     saveArticle = () => {
         const {writeActions} = this.props
+        if (!this.state.title || !this.state.content) {
+            writeActions.notice('danger', 'Oops, 文章内容不能为空~')
+            return
+        }
         writeActions.saveArticle(this.state.title, this.state.content)
     }
     render () {

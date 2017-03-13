@@ -1,7 +1,8 @@
 /*100px = 8rem*/
 
 .header {
-
+  position: relative;
+  z-index: 1001;
   background-color: #ffffff;
   padding-top: 1.6rem;
   padding-bottom: 1.6rem;
