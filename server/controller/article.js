@@ -18,21 +18,42 @@ db1.on('error', function (err) {
 // };
 
 exports.add = function(req, res) {
-    console.log(req.body)
     if(!req.body.hasOwnProperty('title') ||
-        !req.body.hasOwnProperty('content')) {
+        !req.body.hasOwnProperty('content') ||
+        !req.body.hasOwnProperty('contentText')) {
         res.statusCode = 400;
         return res.send('Error 400: Post syntax incorrect.');
     }
     // 实例化新添加的内容
     var newArticle = {
         title : req.body.title,
-        content : req.body.content
+        content : req.body.content,
+        contentText: req.body.contentText
     };
     var ArticleEntity = new article(newArticle);
     ArticleEntity.save();
     res.json('article success');
 };
+
+exports.getArticles = function (req, res) {
+    article.find(function (err, articles) {
+        console.log('got');
+        res.json(articles)
+    })
+}
+
+
+exports.getArticleDetail = function (req, res) {
+    var objectId = mongoose.Types.ObjectId(req.query.id);
+    article.find({_id:objectId}, function (err, article) {
+        if (err) {
+            console.log('no article')
+        } else {
+            console.log(article)
+            res.json(article)
+        }
+    })
+}
 
 // exports.get = function(req, res){
 //     var q = article.find({_id:req.params.id}, function(err, article) {

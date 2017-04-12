@@ -1,3 +1,7 @@
-.index {
-  z-index: 999;
+.container-fluid {
+  min-height: 62rem;
+
+  .index-body {
+    z-index: 999;
+  }
 }

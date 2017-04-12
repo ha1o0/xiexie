@@ -9,29 +9,32 @@ class BlogAbstract extends Component {
     constructor(props) {
         super(props)
         this.state = {
-
+            id: ''
         }
     }
 
+    toArticleDetail = (id) => {
+        window.location = '/articleDetail?id=' + id
+    }
+
     render() {
+        const {authorName, time, labels, title, content, id} = this.props
+        var articleId = this.props.id
         return (
-            <div className="blog-abstract text-left">
+            <div className="blog-abstract text-left" onClick={this.toArticleDetail.bind(this, articleId)}>
                 <div className="abstract-header">
                     <img src='./src/img/xjs.jpeg' alt="" className="head-img img-circle"/>
-                    <p className="author-name">行走的猪</p>
-                    <p className="time">2017-03-08 15:25</p>
-                    <p className="labels">
-                        <span className="label label-warning">php</span>
-                        <span className="label label-info">nodejs</span>
-                    </p>
+                    <p className="author-name">{authorName}</p>
+                    <p className="time">{time}</p>
                 </div>
-                <h4 className="title">这是一个标题</h4>
-                <p className="content">为了兼容各主流浏览器并支持这些主流浏览器的较低版本，
-                    在基于Webkit的Chrome和Safari等浏览器上使用box-shadow属性时，
-                    我们需要将属性的名称写成-webkit-box-shadow的形式。Firefox浏览器则需要写成-moz-box-shadow的形式。
-                </p>
+                <h4 className="title">{title}</h4>
+                <div className="content" ref={'content'}></div>
             </div>
         )
+    }
+
+    componentDidMount () {
+        this.refs.content.innerHTML = this.props.content
     }
 }
 

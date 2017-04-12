@@ -2,25 +2,37 @@
   margin-top: 2rem;
   min-height: 59.4rem;
   z-index: 999;
-  .writer-options {
-    margin-bottom: 2rem;
 
-    button {
-      outline: none;
-      margin-right: 0.5rem;
-    }
+  .content-title {
+    width: 100%;
+    height: 4rem;
+    outline: none;
+    font-size: 2rem;
+    border: none;
+    padding-left: 1rem;
+  }
 
-    .submit-btn {
-      float: right;
-    }
+  .submit {
+    display: inline-block;
+    height: 4rem;
+    width: 6rem;
+    outline: none;
+    position: absolute;
+    right: 1.4rem;
+  }
+
+  hr {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
   }
 
   .writer-content {
+    font-size: 20px;
     text-align: left;
     background-color: #ffffff;
     box-shadow: 0 5px 15px  #9c9c9c;
     border-radius: 10px;
-    padding: 2rem 2rem 2rem 2rem;
+    padding: 1rem 2rem 2rem 2rem;
     width: 100%;
     min-height: 52rem;
     resize: none;
@@ -30,26 +42,13 @@
     border-radius: 10px;
     outline: none;
 
-    .content-title {
-      width: 100%;
-      height: 3rem;
-      outline: none;
-      font-size: 2rem;
-      border: none;
-    }
-
-    hr {
-      margin-bottom: 1rem;
-      margin-top: 1rem;
-    }
-
     .content-content {
       min-height: 45rem;
       height: auto;
       outline: none;
       font-size: 2rem;
       cursor: text;
-      &:empty:before{
+      &:empty:before {
         content: attr(placeholder);
         color: salmon;
       }

@@ -7,6 +7,7 @@ import Index from '../components/index/Index'
 import HelloWorld from '../components/hello/HelloWorld'
 import Header from '../components/common/Header'
 import Xiexie from '../components/write/Write'
+import ArticleDetail from '../components/index/ArticleDetail'
 
 class Root extends React.Component {
   render() {
@@ -15,7 +16,7 @@ class Root extends React.Component {
             <Route path="/" component={Header}>
                 <IndexRoute component={Index}/>
                 <Route path="/xiexie" component={Xiexie}/>
-                <Route path="/about" component={Index}/>
+                <Route path="/articleDetail" component={ArticleDetail}/>
             </Route>
         </Router>
     )
