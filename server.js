@@ -23,6 +23,8 @@ app.all('*',function (req, res, next) {
     }
 });
 app.get('/api/getUsers', user.list);
+app.get('/api/getArticles', article.getArticles);
+app.get('/api/getArticleDetail', article.getArticleDetail);
 app.post('/api/registerUser', user.add);
 app.post('/api/saveArticle', article.add);
 

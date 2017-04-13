@@ -10,9 +10,10 @@
   transition: all .3s linear;
   &:hover {
     transition: all .2s linear;
-    -moz-box-shadow: 2px 2px 4px #9c9c9c;
-    -webkit-box-shadow: 1px 5px 20px  #9c9c9c;
-    box-shadow: 0 5px 15px  #9c9c9c;
+    //-moz-box-shadow: 2px 2px 4px #9c9c9c;
+    //-webkit-box-shadow: 1px 5px 20px  #9c9c9c;
+    //box-shadow: 0 5px 15px  #9c9c9c;
+    box-shadow: 0 8px 12px rgba(0,0,0,.04), 0 8px 28px rgba(0,0,0,.12);
   }
 
   .abstract-header {

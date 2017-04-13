@@ -64,6 +64,7 @@
     "webpack": "^1.14.0"
   },
   "devDependencies": {
+    "wangeditor": "^2.1.23",
     "webpack-dev-server": "^1.16.2"
   }
 }

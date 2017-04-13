@@ -14,5 +14,7 @@ export const INDEX = 'INDEX'
 export const SUBMIT_SHORT = 'SUBMIT_SHORT'
 
 export const SAVE_ARTICLE = 'SAVE_ARTICLE'
+export const GET_ARTICLES = 'GET_ARTICLES'
+export const GET_ARTICLE_DETAIL = 'GET_ARTICLE_DETAIL'
 export const NOTICE = 'NOTICE'
 export const HIDE_NOTICE = 'HIDE_NOTICE'
