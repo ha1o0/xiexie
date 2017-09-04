@@ -27,7 +27,7 @@ class ArticleDetail extends Component {
     render () {
         const {articleDetail} = this.props
         return (
-            <div className="article-body">
+            <div className="col-lg-10 col-lg-offset-1">
                 <h3 className="article-title">{articleDetail.title}</h3>
                 <div className="article-content" ref={'articleContent'}></div>
             </div>

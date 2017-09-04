@@ -20,3 +20,16 @@ new WebpackDevServer(webpack(config), {
     console.log('一切准备就绪……');
     console.log('Listening at http://localhost:8000');
 });
+
+// module.exports.plugins = (module.exports.plugins || [])
+//     .concat([
+//         new webpack.DefinePlugin({
+//             __DEV__: JSON.stringify(JSON.parse(process.env.DEBUG || 'false'))
+//         }),
+//         new webpack.optimize.UglifyJsPlugin({
+//             compress: {
+//                 warnings: false
+//             }
+//         }),
+//         new webpack.optimize.OccurenceOrderPlugin(),
+//     ]);

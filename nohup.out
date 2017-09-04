@@ -1,0 +1,63 @@
+一切准备就绪……
+正在监听后台api---http://127.0.0.1:8001
+connection1 error
+connection1 error
+一切准备就绪……
+正在监听后台api---http://127.0.0.1:8001
+Mongoose1 connection success
+Mongoose1 connection success
+got
+got
+[ { _id: 59070eb213703c17fc39c13d,
+    title: 'This is a javascript test article',
+    content: '<p>Hello, world.</p><p><br></p><p><b>This is a test article.</b></p><pre style="max-width: 100%;"><code class="javascript hljs" codemark="1"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">href</span>(<span class="hljs-params"></span>) </span>{\n  <span class="hljs-keyword">var</span> a = <span class="hljs-number">0</span>\n  <span class="hljs-built_in">window</span>.location =  <span class="hljs-string">\'http://www.baidu.com\'</span>\n}</code></pre><p><br></p>',
+    contentText: 'Hello, world.\n\n\n\nThis is a test article.\n\nfunction href() {\n  var a = 0\n  window.location =  \'http://www.baidu.com\'\n}\n\n\n...',
+    __v: 0 } ]
+got
+[ { _id: 58ee4a65a48f30063bd802c4,
+    title: 'docker搭建nginx实现反代 配置多域名以及多端口号',
+    content: '<p>最近在研究docker，在架设了几个网站后，发现个问题 宿主机的80端口只可以绑定一个容器，并且没办法实现多域名，所以想到了nginx的反代，以下是使用docker架设nginx反代的笔记。</p><h5><font size="5">1.需求：</font></h5><p>我的需求，需要将多个域名解析到同一台服务器上（即宿主机），并采用nginx反代的方式，将不同的域名和不同的容器端口号对应映射。</p><h5><font size="5">2.技术：</font></h5><p>由于现在网站就架设在docker的容器上，所以我将采用docker进行搭建相应的配置，采用nginx服务器做反向代理。</p><h5><font size="5">3.实现：</font></h5><p><font size="4">第一步：</font></p><p>安装docker，如果你的服务器上还没有相应的docker,可以参考CentOS安装步骤或者Ubuntu 系列安装 Docker步骤进行安装。（请自行google或者使用<a href="http://www.daocloud.io/" target="_blank">DaoCloud管理平台</a>）</p><p><font size="4">第二步：</font></p><p>获取nginx镜像，执行命令：</p><pre>docker pull nginx</pre><p><font size="4">第三步：</font></p><p>创建并启动nginx容器，执行命令：</p><pre><code>docker run –name=nginx -p 80:80 -v /nginx/conf.d:/etc/nginx/conf.d -d nginx</code></pre><p>此时你已经创建了一下名字为nginx的容器，该容器中/etc/nginx/conf.d目录下的文件将与宿主机中/nginx/conf.d目录下的文件保持同步，而/etc/nginx/conf.d是nginx的站点配置文件夹，下面每一个conf配置文件各自对应一个站点。反代的配置也得写在里面。</p><p><font size="4">第四步：</font></p><p>到此你的nginx容器已经创建成功，我们在此修改对应的配置文件即可，例如我现在需要将www.aaa.com的域名路径指向一个容器运行端口号8080上，只需要进入你宿主机中/nginx/conf.d目录中增加一个文件（命令cd /nginx/conf.d），文件名字要求必须为.conf格式，例如可以改名为：www.aaa.com.conf(命令vi www.aaa.com.conf),里面的内容如下（自己修改对应的地方，然后粘贴到vi中，按esc 输入:wq来保存文件）：</p><pre><code>server {\n    listen       80;\n    server_name www.aaa.com自己域名;\n    location / {\n       proxy_pass http://宿主机ip:容器对外的端口号;\n      }\n    error_page   500 502 503 504  /50x.html;\n    location = /50x.html {\n        root   /usr/share/nginx/html;\n    }\n}</code></pre><p>如果你需要多个域名的配置，只需要在/nginx/conf.d目录下加相应的配置文件即可，一般只需要修改server_name和proxy_pass即可。然后重启nginx容器，即：</p><pre><span style="white-space: pre-wrap;">docker restart nginx</span></pre><p>打开你的域名即可看到效果，当然你得先把域名解析到宿主机的ip上面。</p>',
+    contentText: '最近在研究docker，在架设了几个网站后，发现个问题 宿主机的80端口只可以绑定一个容器，并且没办法实现多域名，所以想到了nginx的反代，以下是使用docker架设nginx反代的笔记。\n\n1.需求：\n\n我的需求，需要将多个域名解析到同一台服务器上（即宿主机），并采用nginx反代的方式，将不同的域名和不同的容器端口号对应映射。\n\n2.技术：\n\n由于现在网站就架设在docker的容器上，所以我将采用docker进行搭建相应的配置，采用nginx服务器做反向代理。\n\n3.实现：\n\n第一步：\n\n安装docker，如果你的服务器上还没有相应的docker,可以参考CentOS安装步骤或者Ubun',
+    __v: 0 } ]
+got
+got
+events.js:154
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE :::8001
+    at Object.exports._errnoException (util.js:893:11)
+    at exports._exceptionWithHostPort (util.js:916:20)
+    at Server.__dirname.Server.Server._listen2 (net.js:1246:14)
+    at listen (net.js:1282:10)
+    at Server.__dirname.Server.Server.listen (net.js:1378:5)
+    at EventEmitter.listen (/Users/sidney/Desktop/xxhub/xiexie/node_modules/express/lib/application.js:617:24)
+    at Object.<anonymous> (/Users/sidney/Desktop/xxhub/xiexie/server.js:32:5)
+    at Module._compile (module.js:413:34)
+    at Object.Module._extensions..js (module.js:422:10)
+    at Module.load (module.js:357:32)
+    at Function.Module._load (module.js:314:12)
+    at Function.Module.runMain (module.js:447:10)
+    at startup (node.js:148:18)
+    at node.js:405:3
+一切准备就绪……
+正在监听后台api---http://127.0.0.1:8001
+Mongoose1 connection success
+Mongoose1 connection success
+got
+[ { _id: 58ee5194e7334e09425ea83f,
+    title: 'php 超全局变量$_POST遇到angular js发出的请求出现错误',
+    content: '<p>原生php 中比较常用的超全局变量在遇到angular js中的restService发出<b>post请求</b>时，可能会出现问题：</p><p>$_POST无法接收request body中的参数值，这时，我们需要用php另外一个获取请求参数的方法：</p><pre style="max-width: 100%;"><code class="php hljs" codemark="1">$params = json_decode(file_get_contents(<span class="hljs-string">\'php://input\'</span>),<span class="hljs-keyword">true</span>);</code></pre><p>当然这是一种比较直接的方法，不利于整体的封装，更好的方法是改变angular的http请求代码。</p><p><br></p>',
+    contentText: '原生php 中比较常用的超全局变量在遇到angular js中的restService发出post请求时，可能会出现问题：\n\n$_POST无法接收request body中的参数值，这时，我们需要用php另外一个获取请求参数的方法：\n\n$params = json_decode(file_get_contents(\'php://input\'),true);\n当然这是一种比较直接的方法，不利于整体的封装，更好的方法是改变angular的http请求代码。\n\n\n\n...',
+    __v: 0 } ]
+got
+[ { _id: 58ee4a65a48f30063bd802c4,
+    title: 'docker搭建nginx实现反代 配置多域名以及多端口号',
+    content: '<p>最近在研究docker，在架设了几个网站后，发现个问题 宿主机的80端口只可以绑定一个容器，并且没办法实现多域名，所以想到了nginx的反代，以下是使用docker架设nginx反代的笔记。</p><h5><font size="5">1.需求：</font></h5><p>我的需求，需要将多个域名解析到同一台服务器上（即宿主机），并采用nginx反代的方式，将不同的域名和不同的容器端口号对应映射。</p><h5><font size="5">2.技术：</font></h5><p>由于现在网站就架设在docker的容器上，所以我将采用docker进行搭建相应的配置，采用nginx服务器做反向代理。</p><h5><font size="5">3.实现：</font></h5><p><font size="4">第一步：</font></p><p>安装docker，如果你的服务器上还没有相应的docker,可以参考CentOS安装步骤或者Ubuntu 系列安装 Docker步骤进行安装。（请自行google或者使用<a href="http://www.daocloud.io/" target="_blank">DaoCloud管理平台</a>）</p><p><font size="4">第二步：</font></p><p>获取nginx镜像，执行命令：</p><pre>docker pull nginx</pre><p><font size="4">第三步：</font></p><p>创建并启动nginx容器，执行命令：</p><pre><code>docker run –name=nginx -p 80:80 -v /nginx/conf.d:/etc/nginx/conf.d -d nginx</code></pre><p>此时你已经创建了一下名字为nginx的容器，该容器中/etc/nginx/conf.d目录下的文件将与宿主机中/nginx/conf.d目录下的文件保持同步，而/etc/nginx/conf.d是nginx的站点配置文件夹，下面每一个conf配置文件各自对应一个站点。反代的配置也得写在里面。</p><p><font size="4">第四步：</font></p><p>到此你的nginx容器已经创建成功，我们在此修改对应的配置文件即可，例如我现在需要将www.aaa.com的域名路径指向一个容器运行端口号8080上，只需要进入你宿主机中/nginx/conf.d目录中增加一个文件（命令cd /nginx/conf.d），文件名字要求必须为.conf格式，例如可以改名为：www.aaa.com.conf(命令vi www.aaa.com.conf),里面的内容如下（自己修改对应的地方，然后粘贴到vi中，按esc 输入:wq来保存文件）：</p><pre><code>server {\n    listen       80;\n    server_name www.aaa.com自己域名;\n    location / {\n       proxy_pass http://宿主机ip:容器对外的端口号;\n      }\n    error_page   500 502 503 504  /50x.html;\n    location = /50x.html {\n        root   /usr/share/nginx/html;\n    }\n}</code></pre><p>如果你需要多个域名的配置，只需要在/nginx/conf.d目录下加相应的配置文件即可，一般只需要修改server_name和proxy_pass即可。然后重启nginx容器，即：</p><pre><span style="white-space: pre-wrap;">docker restart nginx</span></pre><p>打开你的域名即可看到效果，当然你得先把域名解析到宿主机的ip上面。</p>',
+    contentText: '最近在研究docker，在架设了几个网站后，发现个问题 宿主机的80端口只可以绑定一个容器，并且没办法实现多域名，所以想到了nginx的反代，以下是使用docker架设nginx反代的笔记。\n\n1.需求：\n\n我的需求，需要将多个域名解析到同一台服务器上（即宿主机），并采用nginx反代的方式，将不同的域名和不同的容器端口号对应映射。\n\n2.技术：\n\n由于现在网站就架设在docker的容器上，所以我将采用docker进行搭建相应的配置，采用nginx服务器做反向代理。\n\n3.实现：\n\n第一步：\n\n安装docker，如果你的服务器上还没有相应的docker,可以参考CentOS安装步骤或者Ubun',
+    __v: 0 } ]
+got
+一切准备就绪……
+正在监听后台api---http://127.0.0.1:8001
+Mongoose1 connection success
+Mongoose1 connection success

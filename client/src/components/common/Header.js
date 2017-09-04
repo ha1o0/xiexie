@@ -53,22 +53,19 @@ class Header extends Component {
         return (
             <div>
               <Notification/>
-              <div className="header" onMouseLeave={this.hideExtendBtn}>
-                <div className="multi-theme">
-                  <div className="out-circle out-black" onClick={this.selectBlackTheme}>
-                    <div className={cs("in-circle in-black",{'black-selected': this.state.blackSelected})}></div>
-                  </div>
-                  <div className="out-circle out-salmon" onClick={this.selectSalmonTheme}>
-                    <div className={cs("in-circle in-salmon",{'salmon-selected': this.state.salmonSelected})}></div>
-                  </div>
-                </div>
-                <div className="navigator">
-                  <button className={cs('btn', {'hidden': !this.state.extendBtnDisplay})}>记忆</button>
-                  <button className="btn" onMouseOver={this.hoverIndexBtn} onClick={this.hrefIndex}>首页</button>
-                  <button className={cs('btn', {'hidden': !this.state.extendBtnDisplay})} onClick={this.hrefXiexie}>写写</button>
-                </div>
-                <div className="user-info"><img src="./src/img/xjs.jpeg" alt="" className="img-circle"/></div>
-              </div>
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <div className="header" onMouseLeave={this.hideExtendBtn}>
+                                <div className="navigator">
+                                    <button className={cs('btn', {'hidden': !this.state.extendBtnDisplay})}>记忆</button>
+                                    <button className="btn" onMouseOver={this.hoverIndexBtn} onClick={this.hrefIndex}>首页</button>
+                                    <button className={cs('btn', {'hidden': !this.state.extendBtnDisplay})} onClick={this.hrefXiexie}>写写</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
 
               <div className="container-fluid">{this.props.children}</div>
               <div className="footer text-center">

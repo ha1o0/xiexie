@@ -12,8 +12,8 @@ var BUILD_PATH = path.resolve(ROOT_PATH, 'build');
 module.exports = {
     devtool: 'eval',
     entry: [
-        'webpack-dev-server/client?http://localhost:8000',
-        'webpack/hot/dev-server',
+        // 'webpack-dev-server/client?http://localhost:8000',
+        // 'webpack/hot/dev-server',
         './src/index.js'
     ],
     output: {

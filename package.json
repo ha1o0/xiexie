@@ -4,8 +4,7 @@
   "description": "the xiexie project",
   "main": "app.js",
   "scripts": {
-    "start": "npm install && node client.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm install && node server.js"
   },
   "keywords": [
     "xiexie",
